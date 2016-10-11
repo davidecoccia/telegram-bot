@@ -1,0 +1,18 @@
+
+bot = telepot.Bot('276922773:AAGeaw5SfOMPBd1-7peQKz5QJe9BpH39bEk')
+bot.sendMessage(237041673, 'We have a fantastic promotion for you! Check this out!')
+from pprint import pprint
+response = bot.getUpdates()
+pprint(response)
+
+Giving an offset essentially acknowledges to the server that you have received all update_ids lower than offset
+bot.getUpdates(offset=100000001)
+
+def handle(msg):
+	pprint(msg)
+
+>>> bot.message_loop(handle)
+
+docker run --name my-redis -d -p 6379:6379 redis
+
+docker run -it --link my-redis:redis --rm redis redis-cli -h redis -p 6379
